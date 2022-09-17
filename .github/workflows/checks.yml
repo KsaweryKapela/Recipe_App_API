@@ -15,10 +15,13 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Test env
+        run: DJANGO_KEY=${{ secrets.DJANGO_KEY }} python -c 'import os;print(os.environ['DJANGO_KEY'])
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test"
         env:
           DJANGO_KEY: 38@pz=7-+u3)h7)@ioe_!^=33apq$uax48=2td=dvhtmvd4^8t
+
       - name: Lint
         run: docker-compose run --rm app sh -c 'flake8'
 

@@ -15,12 +15,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Test env
-        run: python -c 'import os; print(os.environ)'
-        env:
-            DJANGO_KEY: ${{ secrets.DJANGO_KEY }}
-      - name: Test inline env vars for python
-        run: DJANGO_KEY=${{ secrets.DJANGO_KEY }} python -c 'import os;print\(os.environ\)'
       - name: Checkout
         uses: actions/checkout@v2
       - name: Test

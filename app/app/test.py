@@ -1,6 +1,5 @@
-# from dotenv import load_dotenv
-# import os
-#
-# load_dotenv()
-#
-# print()
+
+import os
+
+
+print(os.getenv('DJANGO_KEY'))

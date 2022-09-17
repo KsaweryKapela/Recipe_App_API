@@ -18,7 +18,7 @@ jobs:
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test"
         env:
-          DJANGO_KEY: ${{ secrets.DJANGO_KEY }}
+          DJANGO_KEY: 38@pz=7-+u3)h7)@ioe_!^=33apq$uax48=2td=dvhtmvd4^8t
       - name: Lint
         run: docker-compose run --rm app sh -c 'flake8'
 

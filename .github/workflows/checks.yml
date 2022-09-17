@@ -15,6 +15,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Test env
         run: python -c 'import os;print(os.environ)'
       - name: Checkout
         uses: actions/checkout@v2
